@@ -362,7 +362,7 @@ class Swagger:
         loader = json.load
         if filename.endswith('.yml') or filename.endswith('.yaml'):
             import yaml
-            loader = yaml.load
+            loader = yaml.safe_load
         with open(filename, 'r') as fd:
             return Swagger.from_dict(loader(fd))
 
